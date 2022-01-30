@@ -1,0 +1,4 @@
+id,name,model_id:id,group_id:id,perm_read,perm_write,perm_create,perm_unlink
+access_confine_unit,access.confine.unit,model_confine_unit,,1,1,1,1
+access_confine_main_it,access.confine.main_it,model_confine_main_it,,1,1,1,1
+access_confine_subitem,access.confine.subitem,model_confine_subitem,,1,1,1,1
