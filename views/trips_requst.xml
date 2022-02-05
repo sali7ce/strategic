@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<odoo>
+
+    <!--tree view of the patient model-->
+    <record id="trips_tree" model="ir.ui.view">
+        <field name="name">trips.request.tree</field>
+        <field name="model">trips.request</field>
+        <field name="arch" type="xml">
+            <tree string="Trips">
+                <field name="partner_id"/>
+                <field name="phone" />
+                <field name="whatsapp"/>
+                <field name="email"/>
+                <field name="goods_type"/>
+                <field name="goods_weight" />
+                <field name="shipping_location"/>
+                <field name="responsible"/>
+                <field name="delivery_location"/>            
+            </tree>
+        </field>
+    </record>
+    <!--farm view of the patient model-->
+
+    <record model="ir.ui.view" id="patient_form">
+        <field name="name">trips.request.form</field>
+        <field name="model">trips.request</field>
+        <field name="arch" type="xml">
+            <form string="Trips">
+            <header>
+              <button type="object" string="Draft" name="draft" class="oe_highlight" states="draft"/>
+              <button type="object" string="Confirm" name="confirmed" class="oe_highlight" states="confirmed"/>
+              <button type="object" string="Under Consideration" name="under_consideration" class="oe_highlight"  states="under_consideration" /> -->
+              <button type="object" string="Done" name="done"  class="oe_highlight" states="done"/> 
+              <button type="object" string="Cancel" name="delete_lines"  class="oe_highlight" states="canceled"/>                             
+              <field  name="state" widget="statusbar"/> 
+            </header>
+
+                <sheet>
+                    <group>
+                           <field name="partner_id"/>
+                           <field name="phone" />
+                           <field name="whatsapp"/>
+                           <field name="email"/>
+                           <field name="goods_type"/>
+                           <field name="goods_weight" />
+                           <field name="shipping_location"/>
+                           <field name="responsible"/>
+                           <field name="delivery_location"/>      
+                   </group>                
+                </sheet>
+            </form>
+        </field>
+    </record>
+
+
+    <!-- action of the Trep menu-->
+    <record id="action_trep" model="ir.actions.act_window">
+        <field name="name">Trep</field>
+        <field name="type">ir.actions.act_window</field>
+        <field name="res_model">trips.request</field>
+        <field name="view_type">form</field>
+        <field name="view_mode">tree,form</field>
+        <field name="context">{}</field>
+        <field name="help" type="html">
+            <p class="o_view_nocontent_smiling_face">
+                   Creat your First Trep 
+            </p>
+        </field>
+    </record>
+
+
+</odoo>

@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<odoo>
+
+
+    <menuitem id="strategic_transportation" name="Strategic Transportation" sequence="0" web_icon="strategic_transportation,static/description/icon.png"/>
+    <menuitem id="trips_request" name="Trips Request" parent="strategic_transportation" action="action_trep" sequence="0" />
+
+</odoo>

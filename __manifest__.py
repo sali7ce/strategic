@@ -1,6 +1,6 @@
 # -*- coding: utf-8 -*-
 {
-    'name': "confine",
+    'name': "Strategic Transportation",
 
     'summary': """
         Short (1 phrase/line) summary of the module's purpose, used as
@@ -25,10 +25,9 @@
     # always loaded
     'data': [
         'security/ir.model.access.csv',
-        'views/unit.xml',
-        'views/main_it.xml',
-        'views/subitem.xml',
-        'data/sequence.xml',
+        'views/trips_requst.xml',
+        'views/menu.xml',
+
     ],
     # only loaded in demonstration mode
     'demo': [
