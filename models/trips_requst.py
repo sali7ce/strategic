@@ -11,11 +11,12 @@ class TripsRequist(models.Model):
     partner_id =fields.Many2one("res.partner", required=True)  
     phone =fields.Char(string='Phone' ,related='partner_id.phone')  
     whatsapp =fields.Char(string='Whatsapp' ,related='partner_id.mobile')  
-    email =fields.Char(string='Phone' ,related='partner_id.email')  
+    email =fields.Char(string='Email' ,related='partner_id.email')  
     goods_type = fields.Char(string="Goods Type")
     goods_weight = fields.Float(string="Goods Weight")
     shipping_location = fields.Char(string="Shipping Location", required=True)
     delivery_location = fields.Char(string="Delivery Location", required=True)
+    image = fields.Binary(string="Image")
     responsible = fields.Many2one('res.users',string="Responsible",readonly="1",default=lambda self:self.env.user)
     state = fields.Selection([
         ('draft','Draft'),
@@ -41,15 +42,13 @@ class TripsRequist(models.Model):
         return {
                 'effect': {
                     'fadeout': 'slow',
-                    'message': 'Appointment Confirmed... Thanks You',
+                    'message': 'Trips Confirmed... Thanks You',
                     'type': 'rainbow_man',
                 }
             }
     def delete_lines(self):
         for rec in self:
-            # user_tz = pytz.timezone(self.env.context.get('tz') or self.env.user.tz)
-            # date_today = pytz.utc.localize(rec.appointment_datetime).astimezone(user_tz)
-            rec.appointment_linse = [(5, 0, 0)]
+            rec.trips_linse = [(5, 0, 0)]
 
 #     name_seq = fields.Char(string="Main ID", reversed=True, copy=False, readonly=True, index=True, default=lambda self: _('New'))
 

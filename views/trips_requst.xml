@@ -7,6 +7,7 @@
         <field name="model">trips.request</field>
         <field name="arch" type="xml">
             <tree string="Trips">
+                <field name="image"/>
                 <field name="partner_id"/>
                 <field name="phone" />
                 <field name="whatsapp"/>
@@ -34,18 +35,22 @@
               <button type="object" string="Cancel" name="delete_lines"  class="oe_highlight" states="canceled"/>                             
               <field  name="state" widget="statusbar"/> 
             </header>
-
                 <sheet>
+                <field name="image" widget="image" class="oe_avatar"/>
+                    <div class="oe_title">
+                        <h1>
+                            <field name="partner_id"/>
+                        </h1>
+                    </div>
                     <group>
-                           <field name="partner_id"/>
                            <field name="phone" />
                            <field name="whatsapp"/>
                            <field name="email"/>
                            <field name="goods_type"/>
                            <field name="goods_weight" />
                            <field name="shipping_location"/>
+                           <field name="delivery_location"/>  
                            <field name="responsible"/>
-                           <field name="delivery_location"/>      
                    </group>                
                 </sheet>
             </form>
